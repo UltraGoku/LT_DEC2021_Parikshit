@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AnimeSenpai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,700;1,300;1,600&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+   <link href="../CSS/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div class="bg">
+        <!-- Navbar Section-->
+            <section class="Navbar">
+            <div class="container">
+                <div class="logo">
+                    <img src="../Images/logo.png" alt="Food Logo" class="img">
+                </div>
+                <div class="Menu text-right">
+                    <ul>
+                        <li>
+                            <a href= "home.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="shounen.html">Shounen</a>
+                        </li>
+
+                        <li>
+                            <a href="seinen.html">Seinen</a>
+                        </li>
+
+                        <li>
+                            <a href="movies.html">Movies</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li><li>
+
+                            <a href="../index.html">Signout</a>
+                        </li>
+
+                    </ul>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </section>
+    </div>
+    
+    <div class="title">
+      <h2>Most Trending Animes</h2>
+    </div>
+    <div class="back">
+        <div class="slider">
+          <div class="slide active">
+            <img src="../Images/DS.jpg" alt="">
+            <div class="info">
+              <h2>DEMON SLAYER</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="../Images/JK.jpeg" alt="">
+            <div class="info">
+              <h2>JUJUTSU KAISEN</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="../Images/OP.png" alt="">
+            <div class="info">
+              <h2>ONE PIECE</h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="../Images/KS.jpg" alt="">
+            <div class="info">
+              <h2>KOMI SAN CAN'T COMMUNICATE </h2>
+              <p></p>
+            </div>
+          </div>
+          <div class="slide">
+            <img src="../Images/AOT.jfif" alt="">
+            <div class="info">
+              <h2>Attack on Titan</h2>
+              <p></p>
+            </div>
+          </div>
+
+          <div class="navigation">
+            <i class="fas fa-chevron-circle-left prev-btn"></i>
+            <i class="fas fa-chevron-circle-right next-btn"></i>
+          </div>
+          <div class="navigation-visibility">
+            <div class="slide-icon active"></div>
+            <div class="slide-icon"></div>
+            <div class="slide-icon"></div>
+            <div class="slide-icon"></div>
+            <div class="slide-icon"></div>
+          </div> 
+        </div>
+
+        <script type="text/javascript">
+          const slider = document.querySelector(".slider");
+          const nextBtn = document.querySelector(".next-btn");
+          const prevBtn = document.querySelector(".prev-btn");
+          const slides = document.querySelectorAll(".slide");
+          const slideIcons = document.querySelectorAll(".slide-icon");
+          const numberOfSlides = slides.length;
+          var slideNumber = 0;
+
+          // Next button
+
+          nextBtn.addEventListener("click", () => {
+            slides.forEach((slide) => {
+              slide.classList.remove("active");
+            });
+            slideIcons.forEach((slideIcon) => {
+              slideIcon.classList.remove("active");
+            });
+
+            slideNumber++;
+            if(slideNumber > (numberOfSlides - 1)){
+              slideNumber = 0;
+            }
+            
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+          });
+
+          prevBtn.addEventListener("click", () => {
+            slides.forEach((slide) => {
+              slide.classList.remove("active");
+            });
+            slideIcons.forEach((slideIcon) => {
+              slideIcon.classList.remove("active");
+            });
+
+            slideNumber--;
+            if(slideNumber < 0){
+              slideNumber = numberOfSlides -1;
+            }
+            
+            slides[slideNumber].classList.add("active");
+            slideIcons[slideNumber].classList.add("active");
+          });
+
+          var playslider;
+
+          var repeater = () => {
+            playslider = setInterval(function(){
+              slides.forEach((slide) => {
+              slide.classList.remove("active");
+              });
+              slideIcons.forEach((slideIcon) => {
+              slideIcon.classList.remove("active");
+              });
+
+              slideNumber++;
+              if(slideNumber > (numberOfSlides - 1)){
+              slideNumber = 0;
+              }
+            
+              slides[slideNumber].classList.add("active");
+              slideIcons[slideNumber].classList.add("active");
+
+            }, 3000);
+          }
+          repeater();
+
+          slider.addEventListener("mouseover", () => {
+            clearInterval(playslider);
+
+          
+          });
+          slider.addEventListener("mouseout",() => {
+            repeater();                      
+          });
+        </script>
+      </div>
+      <div class="clearfix"></div>
+      <div class="title">
+        <h2><div class="lines"></div> Trending Shounen Animes<div class="lines"></div> </h2>
+      </div>
+      <div class="bg1">
+        <div class="row">
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/TR.jpg" alt="">
+                  <h1 class="text-center">Tokyo Revengers</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Tokyo Revengers</h1> 
+                  <p class="text-center">Takemichi Hanagaki wakes up one day to find out that his ex-girlfriend Hinata Tachibana has died in an incident caused by the Tokyo Manji Gang. Later, when he accidentally falls onto train tracks, he is suddenly sent back in time twelve years, and soon realizes that he can use this ability to save Hinata.</p> 
+                  <h3>Score: 8.24/10<br>
+                    Episodes: 24<br>
+                    Status: Finished Airing<br>
+                    Aired: Apr 11, 2021 to Sep 19, 2021<br>
+                    Producers: Pony Canyon<br>
+                    Studios: LIDENFILMS<br>
+                    Source: Manga<br>
+                    Genres: Action, Drama, Supernatural<br>
+                    Demographic: Shounen<br>
+                    Duration: 23 min. per ep.<br>
+                    Rating: R - 17+ (violence & profanity)
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/FF.jpg" alt="">
+                  <h1 class="text-center">Fire Force</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Fire Force</h1> 
+                  <p class="text-center">Young and eager third-generation pyrokinetic Shinra Kusakabe, nicknamed Devil's Footprints for his explosive ability to ignite his feet at will, becomes a member of the lively Special Fire Force Company 8.</p> 
+                  <h3>Score: 7.68/10<br>
+                    Episodes: 24<br>
+                    Status: Finished Airing<br>
+                    Aired: Jul 6, 2019 to Dec 28, 2019<br>
+                    Producers: Mainichi Broadcasting System, Kodansha, bilibili, DMM pictures, DMM Music<br>
+                    Licensors: Funimation<br>
+                    Studios: David Production<br>
+                    Source: Manga<br>
+                    Genres: Action, Supernatural<br>
+                    Demographic: Shounen<br>
+                    Duration: 23 min. per ep.<br>
+                    Rating: PG-13 - Teens 13 or older<br>
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/86.jpg" alt="">
+                  <h1 class="text-center">86</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">86</h1> 
+                  <p class="text-center">According to the Republic of San Magnolia, their ongoing war against the Giadian Empire has no casualties—however, that is mere propaganda. While the silver-haired Alba of the Republic's eighty-five sectors live safely behind protective walls, those of different appearances are interned in a secret eighty-sixth faction.</p> 
+                  <h3>Score: 8.20/10<br>
+                    Episodes: 11<br>
+                    Status: Finished Airing<br>
+                    Aired: Apr 11, 2021 to Jun 20, 2021<br>
+                    Producers: Aniplex, Kadokawa, Bandai Spirits<br>
+                    Studios: A-1 Pictures<br>
+                    Source: Light novel<br>
+                    Genres: Action, Drama, Sci-Fi<br>
+                    Duration: 23 min. per ep.<br>
+                    Rating: R - 17+ (violence & profanity)<br>
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="title">
+          <h2><div class="lines"></div> Trending Seinen Animes <div class="lines"></div></h2>
+        </div>
+        <div class="row">
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/VS.jpg" alt="">
+                  <h1 class="text-center">Vinland Saga</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Vinland Saga</h1> 
+                  <p class="text-center">Young Thorfinn grew up listening to the stories of old sailors that had traveled the ocean and reached the place of legend, Vinland. It's said to be warm and fertile, a place where there would be no need for fighting—not at all like the frozen village in Iceland where he was born, and certainly not like his current life as a mercenary.</p> 
+                  <h3>Score: 8.73/10<br>
+                    Episodes: 24<br>
+                    Status: Finished Airing<br>
+                    Aired: Jul 8, 2019 to Dec 30, 2019<br>
+                    Producers: Production I.G, Dentsu, Kodansha, Twin Engine<br>
+                    Licensors: Sentai Filmworks<br>
+                    Studios: Wit Studio<br>
+                    Source: Manga<br>
+                    Genres: Action, Adventure, Drama<br>
+                    Demographic: Seinen<br>
+                    Duration: 24 min. per ep.<br>
+                    Rating: R - 17+ (violence & profanity)<br>
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/BSD.jpg" alt="">
+                  <h1 class="text-center">Bungou Stray Dogs</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Bungou Stray Dogs</h1> 
+                  <p class="text-center">Atsushi Nakajima is on the brink of death after being kicked out of his orphanage. With no food and nowhere to go, all hope seems lost—until he saves a mysterious man called Osamu Dazai from drowning. Much to his partner Doppo Kunikida's irritation, Dazai offers Atsushi a meal and reveals they work for the Armed Detective Agency.</p> 
+                  <h3>Score: 8.47/10<br>
+                    Episodes: 12<br>
+                    Status: Finished Airing<br>
+                    Aired: Apr 12, 2019 to Jun 28, 2019<br>
+                    Producers: WOWOW, Lantis, Movic, Kadokawa, Bandai Namco Arts<br>
+                    Studios: Bones<br>
+                    Source: Manga<br>
+                    Genres: Action, Mystery, Supernatural<br>
+                    Demographic: Seinen<br>
+                    Duration: 23 min. per ep.<br>
+                    Rating: R - 17+ (violence & profanity)
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/G.jpg" alt="">
+                  <h1 class="text-center">Gleipnir</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Gleipnir</h1> 
+                  <p class="text-center">Shuuichi Kagaya is what one would consider an average high school student, but sometimes, he turns into a monster. He doesn't know how or why he got his abilities, only that he would prefer no one knows about them. </p> 
+                  <h3>Score: 7.01/10<br>
+                    Episodes: 13<br>
+                    Status: Finished Airing<br>
+                    Aired: Apr 5, 2020 to Jun 28, 2020<br>
+                    Producers: Kodansha, bilibili, Good Smile Film<br>
+                    Licensors: Funimation<br>
+                    Studios: Pine Jam<br>
+                    Source: Manga<br>
+                    Genres: Action, Mystery, Supernatural, Ecchi<br>
+                    Demographic: Seinen<br>
+                    Duration: 23 min. per ep.<br>
+                    Rating: R - 17+ (violence & profanity
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+        <br><br>
+        <div class="title">
+          <h2><div class="lines"></div>Trending Movies<div class="lines"></div> </h2>
+        </div>
+        
+        <div class="row">
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/VG.png" alt="">
+                  <h1 class="text-center">Violet Evergarden</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Violet Evergarden</h1> 
+                  <p class="text-center">Several years have passed since the end of The Great War. As the radio tower in Leidenschaftlich continues to be built, telephones will soon become more relevant, leading to a decline in demand for "Auto Memory Dolls." Even so, Violet Evergarden continues to rise in fame after her constant success with writing letters. However, sometimes the one thing you long for is the one thing that does not appear.</p> 
+                  <h3>Score: 8.98/10<br>
+                    Episodes: 1<br>
+                    Status: Finished Airing<br>
+                    Aired: Sep 18, 2020<br>
+                    Producers: Shochiku<br>
+                    Licensors: Funimation<br>
+                    Studios: Kyoto Animation<br>
+                    Source: Light novel<br>
+                    Genres: Drama, Fantasy, Slice of Life<br>
+                    Duration: 2 hr. 20 min.<br>
+                    Rating: PG-13 - Teens 13 or older<br>
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/MT.jpg" alt="">
+                  <h1 class="text-center">Demon Slayer - The Movie: Mugen Train</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">The Mugen Train</h1> 
+                  <p class="text-center">After a string of mysterious disappearances begin to plague a train, the Demon Slayer Corps' multiple attempts to remedy the problem prove fruitless. To prevent further casualties, the flame pillar, Kyoujurou Rengoku, takes it upon himself to eliminate the threat.</p> 
+                  <h3>Score: 8.7/10<br>
+                    Episodes: 1<br>
+                    Status: Finished Airing<br>
+                    Aired: Oct 16, 2020<br>
+                    Producers: Aniplex, Shueisha<br>
+                    Licensors: Aniplex of America<br>
+                    Studios: ufotable<br>
+                    Source: Manga<br>
+                    Genre: Supernatural<br>
+                    Themes: Demons, Historical<br>
+                    Demographic: Shounen<br>
+                    Duration: 1 hr. 56 min.<br>
+                    Rating: R - 17+ (violence & profanity)
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front">
+                  <img src="../Images/WTY.jpg" alt="">
+                  <h1 class="text-center">Weathering With You</h1> 
+                </div>
+                <div class="flip-card-back">
+                  <h1 class="text-center">Weathering With You</h1> 
+                  <p class="text-center">Tokyo is currently experiencing rain showers that seem to disrupt the usual pace of everyone living there to no end. Arrives the runaway high school student Hodaka Morishima, who struggles to financially support himself. At the same time, the orphaned Hina Amano also strives to find work to sustain herself and her younger brother.</p> 
+                  <h3>Score: 8.7/10<br>
+                    Episodes: 1<br>
+                    Status: Finished Airing
+                    Aired: Jul 19, 2019<br>
+                    Producers: Toho, Lawson HMV Entertainment, JR East Marketing & Communications, Kadokawa<br>
+                    Licensors: GKIDS<br>
+                    Studios: CoMix Wave Films<br>
+                    Source: Original<br>
+                    Genres: Drama, Fantasy, Romance, Slice of Life<br>
+                    Duration: 1 hr. 52 min.<br>
+                    Rating: PG-13 - Teens 13 or older
+                   </h3>
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      
+        <br><br><br>
+      <footer>
+        <div class="row1">
+          <div class="col">
+            <img src="../Images/logo1.png" alt="Logo">
+            <p class="text-margin">Explore your desire anime </p>
+          </div>
+          <div class="col">
+            <h3>Hosted At <div class="underline"></div> </h3>
+            <p>New Panvel, Navi Mumbai,</p>
+            <p>Maharashtra, India.</p>
+            <p>PIN 410206</p>
+            <h4 class="site">Contact us on - query@animesenpai.com</h4>
+          </div>
+          <div class="col">
+            <h3>Links <div class="underline"></div> </h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="shounen.html">Shounen</a></li>
+              <li><a href="seinen.html">Seinen</a></li>
+              <li><a href="movies.html">Movies</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="../index.html">Login</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <h3>Newsletter <div class="underline"></div> </h3>
+            <form>
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="Enter Your Email Address" required>
+              <button type="submit"><i class="fas fa-arrow-right"></i></button>
+            </form>
+            <div class="social-icons">
+              <i class="fab fa-facebook"></i>
+              <i class="fab fa-twitter"></i>
+              <i class="fab fa-instagram"></i>
+              <i class="fab fa-youtube"></i>
+
+            </div>
+          </div>
+        </div>
+        <hr>
+        <p class="text-center">Animesenpai.com ©2021 - All Right Reserved</p>
+      </footer>
+    </div>
+</body>
+</html>
